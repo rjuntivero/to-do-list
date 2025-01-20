@@ -4,23 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-           <ul>
-            <li><button id="homeButton" class="active">Home</button></li>
-            <li><button id="menuButton">Menu</button></li>
-            <li><button id="aboutButton">About</button></li>
-           </ul>
+    <div class="wrapper">
+        <nav id="sidebar">
+            <h1 class="logo">TODO</h1>
+            <ul>
+                <li class="tab active" id="homeTab">
+                    <div class="tabContent">
+                    <svg class="tabIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_4_81)">
+                        <path d="M3 9H17V7H3V9ZM3 13H17V11H3V13ZM3 17H17V15H3V17ZM19 17H21V15H19V17ZM19 7V9H21V7H19ZM19 13H21V11H19V13Z" fill="white"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_4_81">
+                        <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                        </defs>
+                        </svg>
+                        <button class="tabBtn">Home</button>
+                    </div>
+                </li>
+                <li class="tab" id="todayTab" >
+                    <div class="tabContent">
+                        <svg class="tabIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_4_43)">
+                        <path d="M19 3H14.82C14.4 1.84 13.3 1 12 1C10.7 1 9.6 1.84 9.18 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM13 18H11V16H13V18ZM13 14H11V8H13V14ZM12 5C11.45 5 11 4.55 11 4C11 3.45 11.45 3 12 3C12.55 3 13 3.45 13 4C13 4.55 12.55 5 12 5Z" fill="white"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_4_43">
+                        <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                        </defs>
+                        </svg>
+                        <button class="tabBtn">Today</button>
+                    </div>
+                </li>
+                <li class="tab">
+                    <div class="tabContent" id="upcomingTab" >
+                        <svg class="tabIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_4_13)">
+                        <path d="M17 12H12V17H17V12ZM16 1V3H8V1H6V3H5C3.89 3 3.01 3.9 3.01 5L3 19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3H18V1H16ZM19 19H5V8H19V19Z" fill="white"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_4_13">
+                        <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                        </defs>
+                        </svg>
+                        <button class="tabBtn">Upcoming</button>
+                    </div>
+                </li>
+            </ul>
+            <div class="projectTabs">
+                <div class="projectTabsHeading">
+                    <h2>Projects</h2>
+                    <svg class="tabIcon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 0.666656C6.64 0.666656 0.666667 6.63999 0.666667 14C0.666667 21.36 6.64 27.3333 14 27.3333C21.36 27.3333 27.3333 21.36 27.3333 14C27.3333 6.63999 21.36 0.666656 14 0.666656ZM20.6667 15.3333H15.3333V20.6667H12.6667V15.3333H7.33333V12.6667H12.6667V7.33332H15.3333V12.6667H20.6667V15.3333Z" fill="#2599F8"/>
+                    </svg>
+                </div>
+                <div class="newProjectsTabs">
+                    <button class="projectBtn"><h2># House</h2></button>
+                    <button class="projectBtn"><h2># School</h2></button>
+                    <button class="projectBtn"><h2># Work</h2></button>
+                    <button class="projectBtn"><h2># Blessed</h2></button>
+                </div>
+            </div>
+            
         </nav>
-    </header>
-    <div id="content">
-        <!-- <div class="headline">
-            <h1>Jay's Burgers</h1>
-            <h2>Eating the Right Way</h2>
-        </div>
-        <img src="https://www.foodandwine.com/thmb/DI29Houjc_ccAtFKly0BbVsusHc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/crispy-comte-cheesburgers-FT-RECIPE0921-6166c6552b7148e8a8561f7765ddf20b.jpg" alt=""> -->
+        <main id="dashboard">
+            <header>
+                <div id="dashboardHeader">
+                    <div class="dashboardActions">
+                        <svg width="36" height="43" viewBox="0 0 36 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.02 38.52C14.02 40.72 15.8 42.5 18 42.5C20.2 42.5 21.98 40.72 21.98 38.52H14.02ZM31.76 30.14V18.5C31.76 12 27.26 6.56 21.18 5.12V3.68C21.18 1.92 19.76 0.5 18 0.5C16.24 0.5 14.82 1.92 14.82 3.68V5.12C8.74 6.56 4.24 12 4.24 18.5V30.14L0 34.38V36.5H36V34.38L31.76 30.14ZM26 22.52H20V28.52H16V22.52H10V18.5H16V12.5H20V18.5H26V22.52Z" fill="#323232"/>
+                            </svg>
+                            
+                        <svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.125 6.125V22.4583H22.4583V6.125H6.125ZM18.375 18.375H10.2083V10.2083H18.375V18.375ZM6.125 26.5417V42.875H22.4583V26.5417H6.125ZM18.375 38.7917H10.2083V30.625H18.375V38.7917ZM26.5417 6.125V22.4583H42.875V6.125H26.5417ZM38.7917 18.375H30.625V10.2083H38.7917V18.375ZM26.5417 26.5417V42.875H42.875V26.5417H26.5417ZM38.7917 38.7917H30.625V30.625H38.7917V38.7917Z" fill="#323232"/>
+                            </svg>
+                            
+                        <svg width="78" height="75" viewBox="0 0 78 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M75.5 37.5C75.5 56.7385 59.2517 72.5 39 72.5C18.7483 72.5 2.5 56.7385 2.5 37.5C2.5 18.2615 18.7483 2.5 39 2.5C59.2517 2.5 75.5 18.2615 75.5 37.5Z" stroke="#3F3F3F" stroke-width="5"/>
+                            </svg>
+                    </div>                       
+                </div>
+                <div id="mainContent">
+                    <h1 id="mainContentHeader">Directory <svg width="39" height="36" viewBox="0 0 39 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32.25 3.5H12.75C10.9625 3.5 9.5 4.8125 9.5 6.41667V23.9167C9.5 25.5208 10.9625 26.8333 12.75 26.8333H32.25C34.0375 26.8333 35.5 25.5208 35.5 23.9167V6.41667C35.5 4.8125 34.0375 3.5 32.25 3.5ZM20.0138 21L14.375 15.8958L16.65 13.8396L20.0138 16.8729L28.35 9.33333L30.625 11.3896L20.0138 21ZM6.25 9.33333H3V29.75C3 31.3542 4.4625 32.6667 6.25 32.6667H29V29.75H6.25V9.33333Z" fill="#323232"/>
+                        </svg>
+                        </h1>
+                    <article class="taskContainer today">
+                        <h3 class="taskHeading">Today's Tasks</h3>
+                        <div class="taskList">
+                            <div class="task">task</div>
+                            <div class="task">task</div>
+                            <div class="task">task</div>
+                        </div>
+                    </article>
+                    <article class="taskContainer upcoming">
+                        <h3 class="taskHeading">Upcoming Tasks</h3>
+                        <div class="taskList">
+                            <div class="task">task</div>
+                            <div class="task">task</div>
+                            <div class="task">task</div>
+                        </div>
+                    </article>
+                </div>
+            </header>
+        </main>
     </div>
 </body>
 </html>

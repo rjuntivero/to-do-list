@@ -1,70 +1,178 @@
+:root {
+    --accent-clr: #2599F8;
+    --main-clr: #3f3f3f;
+    --box-shadow: rgba(0,0,0,0.3);
+    --hover-btn: #333333;
+}
+
 html,
 body {
     height: 100%;
     margin: 0;
-    background-color: black;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Inter";
 }
 
-ul {
+* {
+    /* outline: 1px solid red; */
+}
+
+h1,h2,h3,h4,h5,h6, p, ul {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) 4fr;
+    grid-template-rows: 1fr;
+    height: 100%;
+}
+
+#dashboard {
+    grid-column: 2;
+    grid-row: 1/ span 1;
+}
+
+#dashboardHeader {
+    padding: 16px;
+    box-shadow: 0px 1px 25px 0px var(--box-shadow);
     display: flex;
-    gap: 1.5em;
-}
-
-button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 24px;
-}
-
-button:hover{
-    box-shadow: 0 2px 0 rgb(252, 212, 126);
-}
-
-button:active{
-    background-color: rgb(43, 28, 14);
-    filter: brightness(1.5);
-}
-
-button.active{
-    box-shadow: 0 2px 0 rgb(252, 212, 126);
-}
-
-header {
-    display: flex;
-    justify-content: flex-end;
-    background-color: rgb(51, 34, 18);
-    :last-child {
-        margin-right: 4px;
+    justify-content: end;
+    svg {
+        margin: 12px;
+        display: inline-block;
+        cursor: pointer;
     }
 }
 
-#content {
+.dashboardActions {
     display: flex;
-    margin-inline: auto;
-    width: 900px;
-    justify-content: center;
     align-items: center;
-    height: 100%;
+    gap: 8px;
+}
+
+#mainContent {
+    padding: 88px;
+    font-size: 1.5rem;
+}
+
+
+.logo {
+    align-self: center;
+    justify-self: center;
+    padding: 48px;
+    color: var(--accent-clr);
+    font-size: 4rem;
+    font-family: "JetBrains Mono";
+}
+
+#sidebar {
+    background-color: var(--main-clr);
+    grid-column: 1;
+    grid-row: 1/ span 2;
+    display: grid;
+    grid-template-rows: repeat(4, auto) 3fr;
     color: white;
-    gap: 3em;
+    box-shadow: 0px 6px 10px 0px var(--box-shadow);
+    
 }
 
-.headline {
-    line-height: 1;
+.tabContent button {
+    padding: 16px;
 }
 
-.headline h1 {
-    font-size: 3em;
+.tab {
+    display: grid;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--hover-btn);
+        transition: background-color 0.2s ease-in;
+    }
+    
 }
 
-img {
-    width: 200px;
-    height: auto;
+.active {
+    background-color: var(--hover-btn);
+    outline: 2px solid var(--accent-clr);
+}
+
+.tabContent {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding-inline: 8px;
+    align-items: center;
+}
+.tabBtn {
+    font-weight: 300;
+    font-size: 24px;
+    justify-self: start;
+}
+
+.tabIcon {
+    margin: 16px 0px 16px 16px;
+    cursor: pointer;
+}
+
+.projectTabsHeading {
+    margin-top: 48px;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 2px solid var(--accent-clr);
+    h2 {
+        font-size: 32px;
+        font-weight: 300;
+    }
+}
+
+.projectTabs {
+    padding-inline: 24px;
+}
+
+.newProjectsTabs {
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+    row-gap: 16px;
+    button {
+        padding: 16px 16px 16px 0px;
+        background-color: transparent;
+        text-align: start;
+        &:hover {
+            background-color: var(--hover-btn);
+            transition: background-color 0.2s ease-in;
+        }
+        h2 {
+            font-weight: 300;
+        }
+    }
+    
+}
+
+
+button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: "Inter";
+    
+}
+
+.taskContainer {
+    padding-top: 32px;
+}
+
+.task {
+    padding: 16px 0px;
+    border-bottom: 2px solid var(--main-clr);
+    
+
+}
+
+.task:first-child {
+    margin-top: 32px;
+    border-top: 2px solid var(--main-clr);
 }

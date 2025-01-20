@@ -1,14 +1,11 @@
 import "./styles.css";
-import { homePage } from './home.js';
-import { menuPage } from './menu.js';
-import { aboutPage } from './about.js';
 
 export const content = document.getElementById("content")
 
 const tabs = {
-    homeButton: homePage,
-    menuButton: menuPage,
-    aboutButton: aboutPage
+    homeTab,
+    todayTab,
+    upcomingTab
 };
 
 function setActiveButton(activeButton) {
@@ -22,8 +19,6 @@ Object.keys(tabs).forEach((id) => {
     const button = document.getElementById(id);
     button.addEventListener("click", () => {
         setActiveButton(button);
-        tabs[id]();
+        tabs[id];
     });
 });
-
-homePage()

@@ -14,6 +14,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/template.html",
         }),
+        
     ],
     devtool: "eval-source-map",
     devServer: {
@@ -34,6 +35,10 @@ module.exports = {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: "asset/resource",
               },
+            {
+            test: /\.svg$/,
+            use: 'svg-inline-loader',
+            },
         ],
     },
 
